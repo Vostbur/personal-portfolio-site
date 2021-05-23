@@ -8,3 +8,5 @@ This is a simple Django project that can be written in a couple of hours and is 
 As a template, I used the free bootstrap theme ["Stanley"](https://usebootstrap.com/theme/stanley). 
 
 The demo is available on [Pythonanywhere](https://vostbur.pythonanywhere.com/).
+
+![](./portfolio.gif)
