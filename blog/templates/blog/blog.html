@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<!-- +++++ Posts Lists +++++ -->
+	<!-- +++++ First Post +++++ -->
+
+	{% for post in posts %}
+		{% if forloop.counter|divisibleby:2 %}
+			<div id="white">
+		{% else %}
+			<div id="grey">
+		{% endif %}
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<p><img src="{{ post.author.avatar.url }}" width="50px" height="50px"> <ba>{{ post.author.name }}</ba></p>
+						<p><bd>{{ post.published_at|date:"F d, Y" }}</bd></p>
+						<h4>{{ post.title }}</h4>
+						{{ post.text|safe|truncatechars:300 }}
+						<p><a href="{% url 'post_detail' id=post.id %}">Continue Reading...</a></p>
+					</div>
+				</div><!-- /row -->
+			</div> <!-- /container -->
+		</div><!-- /grey -->
+	{% endfor %}
+{% endblock %}

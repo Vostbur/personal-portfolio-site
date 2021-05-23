@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	
+	<!-- +++++ Post +++++ -->
+	<div id="white">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<p><img src="{{ post.author.avatar.url }}" width="50px" height="50px"> <ba>{{ post.author.name }}</ba></p>
+					<p><bd>{{ post.published_at|date:"F d, Y" }}</bd></p>
+					<h4>{{ post.title }}</h4>
+					{{ post.text|safe }}
+					<br>
+					<hr>
+					<p><a href="{% url 'blog' %}"># Back</a></p>
+				</div>
+
+			</div><!-- /row -->
+	    </div> <!-- /container -->
+	</div><!-- /white -->
+	
+{% endblock %}

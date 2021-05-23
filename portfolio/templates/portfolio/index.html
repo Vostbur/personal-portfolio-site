@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+	{% block intro %}
+	{% endblock %}
+
+	<!-- +++++ Projects Section +++++ -->
+	<div class="container pt">
+		<div class="row mt centered">
+			{% for project in projects %}
+				<div class="col-lg-4">
+					<a class="zoom green" href="{% url 'work_detail' id=project.id %}"><img class="img-responsive" src="{{ project.image.url }}" alt="" /></a>
+					<p>{{ project.name|upper }}</p>
+				</div>
+				{% if forloop.counter|divisibleby:3 %}
+					</div>
+					<div class="row mt centered">
+				{% endif %}
+			{% endfor %}
+		</div><!-- /row -->
+	</div><!-- /container -->
+{% endblock %}
